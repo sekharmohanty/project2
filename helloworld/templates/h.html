@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        .add{
+            align-content: center;
+        }
+    </style>
+</head>
+<body bgcolor="lightpink" align=center>
+    <h1> hello mr ..{{name}}</h1>
+    <a href="{{link}}">home</a>
+    <div class="add">
+        <form action="mul" method="post">
+            {% csrf_token %}
+            enter 1st value-<input type="text"  name="val1" id="mul" value="2"><br>
+            enter 2nd value-<input type="text"  name="val2" id="mul" value="5"><br>
+            <input type="submit">
+        </form>
+    </div>
+    {% if user.is_authenticated %}
+    <a href="sout/logout">logout</a>
+    {% else %}
+    <a href="student/signup">signup</a><br>
+    <a href="slog/login">login</a>
+    {% endif %}
+    
+    </div>
+
+    
+</body>
+</html>
